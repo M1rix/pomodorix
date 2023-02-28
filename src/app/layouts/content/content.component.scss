@@ -1,0 +1,27 @@
+.start {
+  box-shadow: rgba(200 200 200) -1px 3px 0;
+  transform: translate(1px, -3px);
+  &:hover{
+    background: #fff;
+    border-color: transparent !important;
+    box-shadow: rgba(180 180 180) -1px 3px 0;
+  }
+}
+
+.beating{
+  animation: beat 1s linear infinite;
+}
+
+@keyframes beat {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1
+  }
+
+}
+
