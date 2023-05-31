@@ -2,9 +2,9 @@
   <div class="card bg-white bg-opacity-10 py-3">
     <div class="card-title mb-0 px-2">
       <ul class="d-flex justify-content-center align-items-center list-unstyled">
-        <li [class.list-item-active]="type === 'pomodoro'"  class="list-item hand pt-0 pb-2 pt-md-2 pb-md-2" (click)="setType('pomodoro')">Pomodoro</li>
-        <li [class.list-item-active]="type === 'short'"  class="list-item hand pt-0 pb-2 pt-md-2 pb-md-2 mx-2" (click)="setType('short')">Short Break</li>
-        <li [class.list-item-active]="type === 'long'"  class="list-item hand pt-0 pb-2 pt-md-2 pb-md-2" (click)="setType('long')">Long Break</li>
+        <li [class.list-item-active]="type === 'pomodoro'"  class="list-item hand pt-0 pb-2 pt-md-2 pb-md-2" (click)="setType('pomodoro', false)">Pomodoro</li>
+        <li [class.list-item-active]="type === 'short'"  class="list-item hand pt-0 pb-2 pt-md-2 pb-md-2 mx-2" (click)="setType('short', false)">Short Break</li>
+        <li [class.list-item-active]="type === 'long'"  class="list-item hand pt-0 pb-2 pt-md-2 pb-md-2" (click)="setType('long', false)">Long Break</li>
       </ul>
     </div>
     <div class="card-body d-flex justify-content-center align-items-center flex-column">

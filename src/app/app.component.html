@@ -1,9 +1,9 @@
 <div id="wrapper" class="vh-100 overflow-hidden transition-300 bg-pomodoro">
   <div class="mb-5">
-    <app-navbar></app-navbar>
+    <app-navbar [isSoundsEnabled]="isSoundsEnabled" (toggleSounds)="toggleSounds()"></app-navbar>
   </div>
   <div class="d-flex justify-content-center align-items-center scale" style="margin-top: 5rem!important;">
-    <app-content></app-content>
+    <app-content [isSoundsEnabled]="isSoundsEnabled"></app-content>
   </div>
   <div class="position-fixed bottom-0 start-50 translate-middle-x">
     <app-footer></app-footer>

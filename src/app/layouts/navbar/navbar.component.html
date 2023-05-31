@@ -11,7 +11,8 @@
       <i class="fa fa-cog" aria-hidden="true"></i> settings
     </li>
     <ul class="settings-dropdown" *ngIf="isSettingsOpen">
-      <li class="text-center"><i class="fa fa-volume-up"></i> Disable sound</li>
+      <li class="text-center" *ngIf="!isSoundsEnabled" (click)="this.toggleSounds.emit()"><i class="fa fa-volume-up"></i> Enable sound</li>
+      <li class="text-center" *ngIf="isSoundsEnabled" (click)="this.toggleSounds.emit()"><i class="fa fa-volume-mute"></i> Disable sound</li>
       <li class="text-center"><i class="fa fa-sync"></i>  Reset profile</li>
       <li class="text-center"><i class="fa fa-xuy"></i>  ...</li>
       <li class="text-center"><i class="fa fa-xuy"></i>  ...</li>
