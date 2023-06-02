@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {CronJob} from "cron";
+import { CronJob } from "cron";
 
 @Component({
   selector: 'app-content',
@@ -47,10 +47,12 @@ export class ContentComponent implements OnInit {
       if (this.isSoundsEnabled && this.time === 10) {
         this.tickingSound.play().then(() => setTimeout(() => {
           this.tickingSound.pause();
-          this.alarmKitchenSound.play().then(() => setTimeout(() => { this.alarmKitchenSound.pause()}, 3000))
+          this.alarmKitchenSound.play().then(() => setTimeout(() => {
+            this.alarmKitchenSound.pause()
+          }, 3000))
         }, 7000));
       }
-      if (this.time === 0){
+      if (this.time === 0) {
         this.goForward(true);
       }
     }
@@ -59,7 +61,7 @@ export class ContentComponent implements OnInit {
 
   getMinutes(): string {
     const time = this.time / 60;
-    return  time === 0 ? '0' : Math.floor(time).toString();
+    return time === 0 ? '0' : Math.floor(time).toString();
   }
 
   getSeconds(): string {
@@ -71,8 +73,10 @@ export class ContentComponent implements OnInit {
   }
 
   setType(type: 'pomodoro' | 'short' | 'long', fromCron?: boolean): void {
-    if(!fromCron){
-      this.clickSound.play().then();
+    if (!fromCron) {
+      if (this.isSoundsEnabled) {
+        this.clickSound.play().then();
+      }
       this.setPageTitle();
     }
     if (this.type !== type) {
@@ -87,7 +91,7 @@ export class ContentComponent implements OnInit {
   }
 
   goForward(fromCron?: boolean): void {
-    if(this.isSoundsEnabled && fromCron) {
+    if (this.isSoundsEnabled && fromCron) {
       this.gongSound.play().then();
       setTimeout(() => {
         this.gongSound.pause();
@@ -121,7 +125,9 @@ export class ContentComponent implements OnInit {
   }
 
   toggleStartStop(isActive: boolean) {
-    this.buttonPressSound.play().then();
+    if (this.isSoundsEnabled) {
+      this.buttonPressSound.play().then();
+    }
     this.isActive = !isActive;
     this.setPageTitle();
   }
